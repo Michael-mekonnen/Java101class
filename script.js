@@ -22,12 +22,9 @@ inputBox.addEventListener("keydown", function (event) {
   }
 });
 
-// Fetch weather data from the API
 function fetchWeather(city) {
-  //API key
   var apiKey = "e0d63cfad1e836b0b4d0e101b20aa685";
 
-  // API using the city name
   var apiUrl =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     encodeURIComponent(city) +
@@ -50,13 +47,10 @@ function fetchWeather(city) {
     });
 }
 
-// Update web page with weather data
 function updateWeatherUI(data) {
-  // Temperature
   var tempElement = document.querySelector(".temperature h2");
   tempElement.textContent = data.main.temp.toFixed(2) + "°";
 
-  // Weather des
   var descElement = document.querySelector(".temperature p");
   descElement.textContent = data.weather[0].description;
 
